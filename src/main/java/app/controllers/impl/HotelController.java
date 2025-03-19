@@ -24,7 +24,7 @@ public class HotelController implements IController<HotelDTO, Integer> {
         // request
         int id = ctx.pathParamAsClass("id", Integer.class).check(this::validatePrimaryKey, "Not a valid id").get();
         // DTO
-        HotelDTO hotelDTO = dao.read(id);
+        HotelDTO hotelDTO = dao.read(1);
         // response
         ctx.res().setStatus(200);
         ctx.json(hotelDTO, HotelDTO.class);
